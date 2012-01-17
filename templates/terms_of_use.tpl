@@ -1,0 +1,144 @@
+{config_load file="test.conf" section="setup"}
+{include file="header.tpl" title=foo}
+
+<div id="base_frame" >
+  <div id="header_frame" >
+    {include file="top.tpl"}
+  </div>
+  <div id="content_frame" >
+			
+			<div class="content-box-main" >
+				
+					<div class="breadcrumb" >
+        <ul>
+          <li class="first" ><a href="index.php" >Home</a></li>
+          <li>About Us</li>
+          <li class="last" >Terms of use</li>
+        </ul>
+      </div>
+				
+					<div class="content-box-l" >
+        {include file="left_nav.tpl"}
+      </div>
+					<div class="content-box-r">
+        <div class="inner-wrapper">
+          <div class="inner-page-content-l box-style-light-gray">
+            <h2 style="padding-left:19px">Terms <span>of Use</span></h2>
+            <div class="sub_cont">
+              <div>
+                <p>This Terms and Condition for Use of Printo website is a legal   agreement between you and Printo Document Services Pvt Ltd., which owns   and runs the Website www.printo.in (hereinafter referred to as ‘Printo’,   ‘our’, ‘us’, ‘we’) providing, among other things, the terms and   conditions for your use of Printo’s services ( the ‘Services’ or   ‘Website services’) through the website located at <a href="http://www.printo.in">www.printo.in</a> (the ‘Website’, ‘Site’).</p>
+                <p>&nbsp;</p>
+                <p><strong>Read the Terms and Conditions carefully.  Your use of services on the   Website means you are consenting to these Terms and Conditions.</strong></p>
+                <p>&nbsp;</p>
+                <p>These Terms and Conditions may be modified from time to time in   Printo’s sole discretion and you may not be notified.  It is your   responsibility to review these Terms and Conditions from time to time.    You have accepted the Agreement as amended if you continue to use any of   the Website services after any amendments are posted on the Website. We   reserve the right to include additional terms and conditions if we were   to provide additional services or programs such as contests, quizzes,   promotions, sweep stakes and the like. You shall be bound by the same on   your participation in such services or programs.</p>
+                <p>&nbsp;</p>
+                <p><strong>1.  Authorised Users.</strong> You represent that you have read and   understood, and that you agree to be bound by this Agreement.  The   Website services are available to individuals aged 13 years or older.    By using the website you represent that you are atleast 13 years old.</p>
+                <p>&nbsp;</p>
+                <p><strong>2 Parental Guidance and Advise.</strong> If you are user between the   ages of 14 and 18, review the terms of this Agreement with your parents.   The Website services are not designed to attract children under the age   of 14 and we do not intentionally collect personal information from   children on our Website.  Parental discretion is advised for users in   the age group of 14 to 18 years.</p>
+                <p>&nbsp;</p>
+                <p><strong>3.  Registration.</strong> To use the Website services, you may have   to be registered and provide your name, email address and other details.    Please see our <a href="http://www.printo.in/privacy">Privacy Policy and practices</a> on how the personal information would be used. However, if you wish to   view the public content on the Website, no registration is required but   you are bound by this Agreement on other Terms and Conditions.</p>
+                <p>&nbsp;</p>
+                <p><strong>4.  Content.</strong></p>
+                <p><strong>4.1  User Content:</strong> &quot;User Content&quot; refers to any comments,   messages (whether text, email, video, multimedia or otherwise), blog   posts, suggestions, stories, artwork, photographs, drawings, videos,   audiovisual works, musical compositions (including lyrics), sound   recordings, characterizations, and/or other similar materials that you   submit, post, upload, transmit, display, communicate or otherwise   distribute on or through Printo Website, as well as any names (whether   yours or someone else's), likenesses, voices, usernames, user profiles,   appearances, and/or other biographical information that may be included   in any of the foregoing.</p>
+                <p>&nbsp;</p>
+                <p><strong>4.2</strong> The content that you submit to the Website remains yours   and we do not claim any intellectual property rights over your content.</p>
+                <p>&nbsp;</p>
+                <p><strong>4.3</strong> By submitting your content to the Website, you provide us   and Users permission to access and use your content.  You hereby grant   to us a worldwide, royalty free, non-exclusive, sub-licensable licence   to publish, reproduce, distribute, use, create derivatives, transmit,   publicly display in every manner and medium.  These rights continue as   long as the content remains on the Website. All actions taken based on   the licensed rights, prior to termination, shall remain valid.</p>
+                <p>&nbsp;</p>
+                <p><strong>4.4</strong> You agree that this licence includes a right for us to   make your content available to other companies, organizations or   individuals with whom we have relationships for the provision of   syndicated services, and to use your content in connection with the   provision of those services.</p>
+                <p>&nbsp;</p>
+                <p><strong>5.  Limitations On Use Of Website.</strong> Printo shall strive to   provide you great user experience on the Website.  We cannot assure you   of accessibility or availability of the Website at all times. You   understand and agree to the following restrictions and limitations on   your use of the Printo Website, and further agree that any violation of   these Terms of Use (including, but not limited to, the following   restrictions and limitations) may result in the suspension or   termination of your account and your ability to access all or any part   of the Website. In addition, we may suspend your ability to use or   access the Website at any time while we investigate complaints or   alleged violations of these Terms of Use, or for any other reason within   our sole discretion.</p>
+                <p>&nbsp;</p>
+                <p><strong>6.  Accuracy of Information.</strong> Some services on the Website   permit or require you to create an account to participate in services   offered, to access additional content, or to secure additional benefits.   You must provide, maintain and update, at all times, accurate,   complete, truthful and current information in response to all questions   asked and requests made by our registration processes, and you will only   use your own account to access the Printo Website and any services they   offer. You will not under any circumstances use the account, username,   or password of someone else at any time.</p>
+                <p>&nbsp;</p>
+                <p><strong>7.  Restricted Behavior and Content.</strong> You are bound by the   rules of conduct set forth herein for use of the Website or any services   offered by the Website.  Your violation of the rules of conduct will   constitute a breach of these Terms of Use, and we reserve our right to   take any and/or all legal actions that may be available.</p>
+                <p>&nbsp;</p>
+                <p><strong>8. Account Security.</strong> You are solely responsible for the   confidentiality of any password and other account information that you   create in order to access or use the Printo Website. You agree to notify   us immediately on any unauthorized use of your account, user name, or   password. You also agree that We are not liable in any manner for any   loss that you may incur as a result of any third party using your   password, either with or without your knowledge. You are solely liable   for any losses incurred by Us, Our affiliates, officers, directors,   employees, consultants, agents, and representatives due to mis-use of   your account or password.</p>
+                <p>&nbsp;</p>
+                <p><strong>9.  Use of Software.</strong> Use of the Site may require you to use   software provided by or operated from the Website, and on occasion we   may make certain software available to you from the Website. To the   extent you use such software or download such software from the Website,   the software, including all files and images contained in or generated   by the software, and accompanying data (collectively, &quot;Software&quot;) will   be deemed to be licensed to you by us, for your personal, noncommercial   use only. We do not transfer either the title or the intellectual   property rights to the Software, and we (or our licensors) retain full   and complete title to the Software as well as all intellectual property   rights therein. You may not sell, redistribute, or reproduce the   Software, nor may you decompile, reverse-engineer, disassemble, or   otherwise convert the Software to a human-perceivable form.</p>
+                <p>&nbsp;</p>
+                <p><strong>9.1 Software Updates.</strong> The Software which you use may   automatically download and install updates from time to time from   Printo. These updates are designed to improve, enhance and further   develop the Services and may take the form of bug fixes, enhanced   functions, new software modules and completely new versions. You agree   to receive such updates (and permit Printo to deliver these to you) as   part of your use of the Services.</p>
+                <p>&nbsp;</p>
+                <p><strong>10. USER CONDUCT.</strong></p>
+                <p><strong>10.1  Compliance With Intellectual Property Laws.</strong> You shall   adhere to the legal rights and intellectual property rights of Printo   and others when using the Webiste or its services. You shall be solely   responsible for violations of any relevant laws or infringement of   intellectual property rights caused by any User Content you provide or   transmit, or that is provided or transmitted using your user account.   The burden of proving that any Content does not violate any laws or   third party rights rests solely with you. You shall not submit, post,   upload, transmit, display, communicate, or otherwise distribute User   Content in violation of any third party's copyrights, patents,   trademarks, trade secrets or other intellectual property or proprietary   rights.</p>
+                <p>&nbsp;</p>
+                <p><strong>10.2  Inappropriate Content.</strong> You will not submit, post,   upload, transmit, display, communicate, or otherwise distribute any User   Content that: (a) is libellous, defamatory, obscene, pornographic,   abusive, or threatening, or that promotes hate, violence or unlawful   discrimination; (b) advocates or encourages conduct that could   constitute a criminal offence, give rise to civil liability, or   otherwise violate any applicable local, state, national, or foreign law   or regulation; (c) is intentionally designed to mislead, disparage or   embarrass others, or that reveals private information about others   without their consent; (d) violates any of the prohibitions set forth   here-in or (e) advertises or otherwise solicits funds or is a   solicitation for goods or services. We reserve the right to terminate   your ability to provide and/or receive of any such material using the   Printo Sites or their services, and, if applicable, to delete any such   material from our servers. We intend to cooperate fully with any law   enforcement officials or agencies in the investigation of any violation   of these Terms of Use or of any applicable laws.</p>
+                <p>&nbsp;</p>
+                <p><strong>10.3  Prohibited Uses.</strong> You are prohibited from violating or   attempting to violate any security features of any Printo Site,   including, without limitation, (a) accessing content or data not   intended for you, or logging onto a server or account that you are not   authorized to access; (b) attempting to probe, scan, or test the   vulnerability of any Printo Site or any associated services, system or   network, or to breach security or authentication measures without proper   authorization; (c) using any automated process or service (such as, by   way of example only, any spider, robot, or automated searching or   &quot;scraping&quot; tool) to monitor, access or copy any content from any Printo   Site; (d) interfering or attempting to interfere with service to any   user, host, or network, including, without limitation, by means of   submitting a virus to an Printo Site, overloading, initiating or   facilitating any &quot;denial of service&quot; attack, &quot;flooding,&quot; &quot;spamming,&quot;   &quot;mail bombing,&quot; or &quot;crashing;&quot; (e) using any Printo Site or its servers   to send unsolicited e-mail, including, without limitation, promotions,   or advertisements for products or services; (f) forging any TCP/IP   packet header or any part of the header information in any e-mail or in   any posting using an Printo Site; or (g) attempting to modify,   reverse-engineer, decompile, disassemble, or otherwise reduce or attempt   to reduce to a human-perceivable form any of the source code used by   the Company in providing the Printo Sites or their services. Any   violation of system or network security may subject you to civil and/or   criminal liability, and will result in a loss of your ability to access   and use the Printo Sites.</p>
+                <p>&nbsp;</p>
+                <p><strong>10.4  Alleged Violations; Termination of Access.</strong> We reserve   the right to terminate your use of any one or more of the Printo Sites   at any time and for any reason (including for no reason). To ensure that   we can provide a high quality experience for you and for other users of   the Printo Sites, you agree that we or our representatives may access   your account and records on a case-by-case basis to investigate   complaints or allegations of abuse, infringement of third party rights,   or other unauthorized uses of the Printo Sites or the services we offer.   We do not intend to disclose the existence or occurrence of such an   investigation unless required by law, but we reserve the right to   terminate your account or your access to an Printo Site immediately,   with or without notice to you, and without liability to you, if we   believe that you have violated any of the Terms of Use, furnished us   with false or misleading information, or interfered with use of any   Printo Site by others.</p>
+                <p>&nbsp;</p>
+                <p><strong>10.5  Copyright Infringement.</strong> Our Copyright Policy on   infringement is simple.  We immediately suspend or terminate the user   who is found to have infringed, or alleged to have infringed, on the   rights of the Company or of a third party, or otherwise violated any   intellectual property laws or regulations. You may please contact us if   you have a good faith belief that your rights or the rights of a third   party have been violated and you want us to delete, edit, or disable the   material in question.  We might ask you for providing us additional   information or proof of violation / infringement.</p>
+                <p>&nbsp;</p>
+                <p><strong>10.6  No Warranties.</strong> We are making the Printo Sites and any   services they provide available &quot;as is&quot; without warranty of any kind.   You assume the risk of any and all damage or loss from use of, or   inability to use, each Printo Site or the services it offers. The   company expressly disclaims any and all warranties, express or implied,   regarding the Printo Sites and our services, including, but not limited   to, any implied warranties of merchantability, fitness for a particular   purpose, or non-infringement. The Company does not warrant that the   Printo Sites or any services they offer will meet your requirements or   that the operation of any Printo Site or its services will be   uninterrupted or error-free.</p>
+                <p>&nbsp;</p>
+                <p><strong>10.7 License Grant.</strong> Other than the limited license set forth   in Section 4, Printo acknowledges and agrees that it obtains no right,   title or interest from you (or your licensors) under these Terms in or   to any content that you submit, post, transmit or display on, or   through, the Website, including any intellectual property rights which   subsist in that content (whether those rights happen to be registered or   not, and wherever in the world those rights may exist).</p>
+                <p>&nbsp;</p>
+                <p><strong>11.  PUBLIC FORUMS.</strong> The content posted on Public Forum   features of this Website is available for viewing by other Site users.   Please read our Privacy Policy governing such content. You shall   evaluate the risks associated with such disclosures / content made by   you on the Public Forums and We shall not be responsible or liable in   any way.</p>
+                <p>&nbsp;</p>
+                <p><strong>12.  Purchases.</strong></p>
+                <p><strong>12.1  Print Quality.</strong> You agree that you shall have no claims   against Printo regarding the quality of any products purchased by you   from Printo so long as the product in question is an accurate depiction   of the image selected by you, on the medium selected by you. </p>
+                <p>&nbsp;</p>
+                <p><strong>12.2  Delivery of Order.</strong> Please allow a reasonable period   of time for the delivery of any products ordered from the Site.   Complaints or requests for refund must be communicated to Printo within a   reasonable period of placing the order, in the event of non-delivery,   or within ten (10) days of delivery of the order, in the event of a   defect in the delivered product. </p>
+                <p>&nbsp;</p>
+                <p><strong>12.3  Payment.</strong> No order shall be considered confirmed   until such confirmation is communicated to you in writing by Printo. You   agree to render payment for any goods or services purchased from Printo   on the Site in accordance with the terms hereof. You will be entitled   to refunds only in accordance with the terms hereof. </p>
+                <p>&nbsp;</p>
+                <p><strong>13.  Payments.</strong></p>
+                You represent and warrant that if you are purchasing something from   Printo that (i) any credit information you supply is true and complete;   (ii) charges incurred by you will be honored by your credit card   company; and (iii) you will pay the charges incurred by you at the   posted prices, including any applicable taxes.
+                <p>&nbsp;</p>
+                <p><strong>14.  Refund and Return Policy.</strong></p>
+                To the extent that you purchase any goods or services directly from   Printo, we will refund to you your purchase price within thirty (30)   days of you notifying us in writing of your desire for the refund,   together with the reason for the request, with the product or service   returned to us in substantially the same condition as when purchased.   Please note, however, that certain products and services mentioned on   the Site are sold by third parties or are linked to third party web   sites, and Printo shall have no responsibility or liability for those   products or services. You may request a refund by contacting us by email   at <a href="mailto:%20refund@printo.in">refund@printo.in</a>.
+                <p>&nbsp;</p>
+                <p><strong>15.  Disclaimers.</strong></p>
+                <p><strong>15.1  Disclaimer Regarding Third-Party Content.</strong> The Printo   Sites contain opinions and views of other users which is beyond Printo’s   control.  Printo is not responsible and does not endorse the accuracy   or validity of such content.  You take complete responsibility of any   action that you may take based on such content. Content of the users are   not reviewed or approved by Printo. You provide personal information to   other users at your own risk. You would use your complete judgment in   using the Site or information on the Site or taking any action based on   the information available on the Site.</p>
+                <p>&nbsp;</p>
+                <p><strong>15.2</strong> Without limiting the generality of the foregoing, you   acknowledge that we have created this site for the purpose of providing   entertainment, news, editorial content, information, tools and services   that we believe our users will use and enjoy, and while we exercise   reasonable efforts to monitor the information on this site and to update   the site regularly, you understand and agree that we cannot and do not   guarantee the accuracy, currency, reliability or completeness of any   information or material included here, or on any site accessible from   here.</p>
+                <p>&nbsp;</p>
+                <p><strong>16. Liability.</strong> We are not liable for damages of any kind   (including, but not limited to, special, incidental, or consequential   damages, lost profits, or lost data, regardless of the foreseeability of   those damages) arising out of or in connection with your use of the   Printo sites or any other materials or services provided to you by Us.   This limitation will apply regardless of whether the damages arise out   of breach of contract, tort, or any other legal theory or form of   action. We may terminate your access to the Printo sites or alter or   delete the Printo sites or their content or features at any time, in any   way, and for any reason or no reason, at our sole discretion.</p>
+                <p>&nbsp;</p>
+                <p><strong>17.  Affiliated Sites.</strong> Our Site may be linked to the website   of third parties, affiliates and business partners.  We have no control   over, and not liable or responsible for content, accuracy, validity,   reliability, quality for such websites or made available by / through   our Website.</p>
+                <p>&nbsp;</p>
+                <p><strong>18. Indemnity.</strong> You agree to indemnify and hold harmless the   Company, its affiliates, officers, directors, employees, consultants,   licensors, agents, and representatives from any and all third party   claims, losses, liability, damages, and/or costs (including reasonable   attorney fees and costs) arising from your access to or use of any   Printo Site, your violation of these Terms of Use, or your infringement,   or infringement by any other user of your account, of any intellectual   property or other right of any person or entity. We will notify you   promptly of any such claim, loss, liability, or demand, and in addition   to your foregoing obligations, you agree to provide us with reasonable   assistance, at your expense, in defending any such claim, loss,   liability, damage, or cost.</p>
+                <p>&nbsp;</p>
+                <p><strong>19.  Copyright.</strong> All contents of the Site are subject to   Copyright © owned by Printo Document Services Pvt. Ltd. and its   licensors. All rights reserved. For more information (including any   questions about reusing materials found on the Site), please contact us   at <a href="mailto:contact@printo.in">contact@printo.in</a></p>
+                <p>&nbsp;</p>
+                <p><strong>20. Trademark.</strong> “Printo”, “Printo.in”, the Printo logo” are   intellectual property of Printo Document Services Pvt Ltd.  Printo has   applied for trademark / service mark protection. </p>
+                <p>&nbsp;</p>
+                <p><strong>21.  Termination.</strong> This Agreement will continue until terminated by either you or Printo. </p>
+                <p>If you want to terminate your legal agreement with Printo, you   may do so by (a) notifying Printo at any time and (b) closing your   accounts for all of the Services which you use, where Printo has made   this option available to you. </p>
+                <p>&nbsp;</p>
+                <p><strong>21.1</strong> Printo may at any time, terminate its legal agreement with you if:</p>
+                <p>(a) you have breached any provision of this Agreement (or have acted   in manner which clearly shows that you do not intend to, or are unable   to comply with the provisions of this Agreement);</p>
+                <p>(b) Printo is required to do so by law (for example, where the provision of the Services to you is, or becomes, unlawful);</p>
+                <p>(c) the third party with whom Printo offered the Services to you has   terminated its relationship with Printo or ceased to offer the Services   to you;</p>
+                <p>(d) the provision of the Services to you by Printo is, in Printo's opinion, no longer commercially viable.</p>
+                <p>&nbsp;</p>
+                <p><strong>21.2</strong> When these Terms come to an end, all of the legal rights,   obligations and liabilities that you and Printo have benefited from,   been subject to (or which have accrued over time whilst this Agreement   was in force) or which are expressed to continue indefinitely, shall be   unaffected by this cessation.</p>
+                <p>&nbsp;</p>
+                <p><strong>22. Governing Law.</strong> These Terms of Use and any contractual   obligation between Us and You will be governed by the laws of India,   subject to the Courts in Bangalore.  Both parties consent to   extra-territorial service of process and submit to the jurisdiction of   said courts.</p>
+                <p>&nbsp;</p>
+                <p><strong>23. Severability; Waiver.</strong> If any provision of this Terms and   Conditions is held to be invalid or unenforceable, such provision shall   be struck and the remaining provisions shall be enforced.</p>
+                <p>&nbsp;</p>
+                <p><strong>24. No License.</strong> Nothing contained on the Printo Sites should   be understood as granting you a license to use any of our trademarks,   copyrights, service marks, or logos, or the trademarks, service marks,   or logos owned by any third party.</p>
+                <p>&nbsp;</p>
+                <p><strong>25.  Contact Information.</strong> If you have any questions concerning   us, the Website, these Terms of Use, or anything related to any of the   foregoing, we can be reached at the following email address or via the   contact information available from the following hyperlink: <a href="http://www.printo.in/about/contact">contact</a></p>
+                <p>&nbsp;</p>
+                <p><strong>Last Update:  Dec 07, 2010</strong></p>
+              </div>
+      <p><br>
+                    <br>
+                  <br>
+              </p>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+			</div>
+		</div>
+  <div id="footer_frame" >
+    {include file="bottom.tpl"}
+  </div>
+</div>
+
+{include file="footer.tpl"}
