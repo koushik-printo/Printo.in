@@ -1,0 +1,349 @@
+<?php
+session_start();
+
+?>
+<script type="text/javascript" src="js/comp_js/jQuery.min.1.6.js"></script>		
+<script type="text/javascript" src="js/comp_js/si.files.js"></script>
+<script type="text/javascript" src="js/comp_js/PageInfo.js"></script>
+
+
+
+<?php 
+//get unique id
+$up_id = uniqid(); 
+?>
+
+
+
+<?php
+ if(isset($_POST['uplod_post']))
+ {
+if (isset($_FILES['image']) && $_FILES['image']['name']!='') {
+	
+	$ftmp = $_FILES['image']['tmp_name'];
+	$oname = $_FILES['image']['name'];
+	$ex=explode(".",$_FILES['image']['name']);
+	$a=time();
+	$file_ex=count($ex);
+	
+	
+	$folderThumbname='demo/'.$_REQUEST['type']."_thumb";
+	
+	
+	$oldimage=$_REQUEST['oldimage'];
+
+	
+	if($oldimage != '')
+	{
+
+		
+		$unlinkfile2=$folderThumbname.'/'.basename($oldimage);
+		if( file_exists($unlinkfile2))
+		{
+			unlink($unlinkfile2);
+
+		}
+		
+		
+	}
+	
+	if(!is_dir($folderThumbname))
+	{
+		mkdir($folderThumbname,0777,true);
+	}
+
+	$date_filename=$_REQUEST['type']."_".$a.".".$ex[$file_ex-1];
+
+	$fname = $folderThumbname."/". $date_filename;
+
+	$_hidden_imagefile_= $date_filename;
+	list($width,$hight,$type,$attr)=getimagesize($ftmp);
+	$cardwidth=400;
+	$cardheight=400;
+/*	if($width < $cardwidth || $hight < $cardheight)
+	{
+	
+		 echo '<script>window.parent.document.getElementById("imgLoad").style.display="none"</script>';
+		echo '<script>window.location="uploadimg.php?type=small&showid=current_selected_text&textfield=smallImg"</script>';
+	}*/
+	
+
+	$thumb_=$folderThumbname."/".$_hidden_imagefile_;
+
+	
+
+
+	move_uploaded_file($ftmp,$thumb_);
+
+	if(move_uploaded_file($ftmp,$thumb_)){
+	
+	$image_val='';
+	@imageResize($_hidden_imagefile_,$folderThumbname,$folderThumbname,$cardheight+200,$cardwidth);
+	$thumb_=$folderThumbname."/".$_hidden_imagefile_;
+	$val_name=$_REQUEST['textfield'];
+
+	$imagesize=getimagesize($thumb_);
+	$imageheight=(int)($imagesize[1] - 12);
+
+			$mainwidth=$imagesize[0];
+			$imagewidth=(int)($imagesize[0] - 12);
+			$mainheight=$imagesize[1];	
+			$imageheight=(int)($imagesize[1] - 12);
+		
+	}
+	else
+	{}
+	
+	
+	
+	}
+		
+	echo "<script>
+	var par = window.parent.document;
+	
+	var elemTop= par.getElementById('workingarea').offsetTop ;
+	var elemLeft= par.getElementById('workingarea').offsetLeft ;
+
+	var gFiles=par.getElementById('indra').value;
+	
+	var tr1 = par.createElement('div');
+	tr1.setAttribute('id','draggable'+gFiles+'_div');
+	tr1.setAttribute('class','drsElement drsMoveHandle');
+	
+	tr1.innerHTML = '<img src=\"\" id=\"draggable'+gFiles+'_text\" border=\"0\" style=\"width:100px;height:100px; \" ><img src=\"\" id=\"draggable'+gFiles+'_text1\" border=\"0\" style=\"width:1px;height:1px; display:none;\"><div id=\"draggable'+gFiles+'_htmWrapper\" style=\"font-weight:normal;font-size:20px;padding-left:10;\"><div id=\"draggable'+gFiles+'_htmWrapper_child\"><input type=\"hidden\"   id=\"draggable'+gFiles+'_textt\" name=\"draggable_textt[] \"><input type=\"hidden\"  name=\"XY_value[]\"  id=\"draggable'+gFiles+'_XY\"><input type=\"hidden\"  name=\"fontsize_value[]\"  id=\"draggable'+gFiles+'_fontsize\"><input type=\"hidden\"  name=\"left_value[]\"  id=\"draggable'+gFiles+'_left\" value=\"0\"><input type=\"hidden\"  name=\"leftorig_value[]\"  id=\"draggable'+gFiles+'_leftorig\" value=\"'+elemLeft+'\"><input type=\"hidden\"  name=\"top_value[]\"  id=\"draggable'+gFiles+'_top\" value=\"0\"><input type=\"hidden\"  name=\"toporig_value[]\"  id=\"draggable'+gFiles+'_toporig\" value=\"'+elemTop+'\"><input type=\"hidden\"  name=\"height_value[]\"  id=\"draggable'+gFiles+'_height\" value=\"100\"><input type=\"hidden\"  name=\"width_value[]\"  id=\"draggable'+gFiles+'_width\" value=\"100\"><input type=\"hidden\"  name=\"brightness_value[]\" value=\"0\" id=\"draggable'+gFiles+'_brightness\"><input type=\"hidden\"  name=\"tint_value[]\" value=\"0\" id=\"draggable'+gFiles+'_tint\"><input type=\"hidden\"  name=\"saturation_value[]\" value=\"0\" id=\"draggable'+gFiles+'_saturation\"><input type=\"hidden\"  name=\"line_space[]\" id=\"draggable'+gFiles+'_line_space\"  /><input type=\"hidden\"  name=\"color_value[]\"  id=\"draggable'+gFiles+'_fontcolor\"><input type=\"hidden\"  name=\"border_value[]\"  id=\"draggable'+gFiles+'_border\"><input type=\"hidden\"  name=\"contrast_value[]\" value=\"0\" id=\"draggable'+gFiles+'_contrast\"><input type=\"hidden\"  name=\"oldClass[]\"  id=\"draggable'+gFiles+'_oldClass\"><input type=\"hidden\"  name=\"smallpic[]\" id=\"draggable'+gFiles+'_smallpic\"  /><input type=\"hidden\"  name=\"leftAlign[]\" id=\"draggable'+gFiles+'_leftAlign\" value=\"1\" /><input type=\"hidden\"  name=\"rightAlign[]\" id=\"draggable'+gFiles+'_rightAlign\" value=\"0\" /><input type=\"hidden\"  name=\"centerAlign[]\" id=\"draggable'+gFiles+'_centerAlign\" value=\"0\" /><input type=\"hidden\"  name=\"justifyAlign[]\" id=\"draggable'+gFiles+'_justifyAlign\" value=\"0\" /></div></div>';
+
+
+
+
+		var images1='draggable'+gFiles;
+		par.getElementById('workingarea').appendChild(tr1);
+	
+		par.getElementById(images1+'_text').src='images/video_loading.gif';
+		
+		
+		
+
+
+
+
+	$('#draggable'+gFiles+'_div',window.parent.document).css({
+					'background': 'transparent url(images/blank.png) repeat scroll 0% 0%',
+					'width': '100px',
+					'height': '100px',
+					'-moz-background-clip': '-moz-initial', 
+					'-moz-background-origin': '-moz-initial',
+					'-moz-background-inline-policy': '-moz-initial',
+					'text-align': 'center',
+					'top': elemTop,
+					'left': elemLeft,
+					'font-weight': 'bold',
+					'color': 'grey'
+					
+
+
+	});
+
+
+
+
+
+
+		
+
+		
+
+
+		par.getElementById(images1+'_smallpic').value='$thumb_';
+		
+		par.getElementById(images1+'_textt').value='$thumb_';
+
+		//par.getElementById('imgLoad').style.display='none';
+		par.getElementById(images1+'_text1').src='$thumb_';
+		par.getElementById(images1+'_text').src='$thumb_';
+		//par.getElementById('origImage').src='$thumb_';
+
+
+		par.getElementById('current_selected_text').value=images1+'_div';
+
+
+ 		//ImageEditor.init('$thumb_',images1+'_text');
+		
+
+	gFiles++;
+	par.getElementById('indra').value=gFiles;
+	
+
+		</script>";
+
+// 	//specify redirect URL
+// 	$redirect = "upload.php?success";
+// 	//redirect user
+// 	header('Location: '.$redirect); die;	
+	
+}
+?>
+<head>
+<style type="text/css" title="text/css">
+/* <![CDATA[ */
+
+.SI-FILES-STYLIZED label.cabinet
+{
+	width: 74px;
+	height: 30px;
+	padding:5px 5px 5px 5px;
+	display: block;
+	overflow: hidden;
+	background:url(images/add_image.png);
+	margin:-5px 0px 0px -7px;
+	cursor:pointer;
+	
+
+}
+
+.SI-FILES-STYLIZED label.cabinet input.file
+{
+	position: relative;
+	height: 100%;
+	width: auto;
+	opacity: 0;
+	
+/*	-moz-opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);*/
+	
+}
+
+/* ]]> */
+</style>
+<style>
+
+iframe.hidden {
+
+	visibility: hidden;
+	width:0px;
+	height:0px;
+
+}
+
+iframe.visible {
+
+    visibility:visible;
+	width:0px;
+	cursor:pointer;
+	height:auto;
+
+}
+.file {
+
+    visibility:hidden;
+	width:0px;
+	cursor:pointer;
+	height:auto;
+
+
+}
+
+
+</style>
+
+<script language="javascript">
+/*function terms()
+{
+  window.parent.location="terms.php";
+}*/
+
+
+function upload(){
+
+var fcheck='';
+if(document.iform.image.value!='')
+{
+
+ fcheck=document.iform.image.value;
+
+}
+
+if(fcheck.indexOf(".jpg")==-1 && fcheck.indexOf(".jpeg")==-1 && fcheck.indexOf(".JPG")==-1 && fcheck.indexOf(".JPEG")==-1 &&fcheck.indexOf(".png")==-1 && fcheck.indexOf(".PNG")==-1  && fcheck.indexOf(".gif")==-1 && fcheck.indexOf(".GIF")==-1)
+{
+alert("please upload jpg,png,gif");
+return false;
+}
+	var par = window.parent.document;
+
+	// hide old iframe
+	var iframes = par.getElementsByTagName('iframe');
+	var iframe = iframes[iframes.length - 1];
+	//iframe.className = 'hidden';
+
+	
+	document.getElementById('oldimage').value = par.getElementById('smallImg').value;
+	
+
+	var workingPos=par.getElementById('workingarea_XY').value;
+// 	var workingtop_=par.getElementById('workingarea').style.top;
+// 	var workingheight_=par.getElementById('workingarea').style.height;
+// 	var workingwidth_=par.getElementById('workingarea').style.width;
+	var workingArrpos=workingPos.split(",");
+	var workingleft_=workingArrpos[0];
+	var workingtop_=workingArrpos[1];
+	var workingheight_=600;
+	var workingwidth_=400;
+// alert(workingleft_+"~~~~~"+workingtop_+"~~~~~"+workingheight_+"~~~~~"+workingwidth_);
+// 		var parLeft=$('#workingarea').position().left;
+// 		var parTop=$('#workingarea').position().top;
+// 		var parWidth=$('#workingarea').width();
+// 		var parHeight=$('#workingarea').height();
+
+	var newLeft=workingleft_ + (workingwidth_/2) - 30;
+	var newTop=workingtop_ + (workingheight_/2);
+// 	alert(newLeft+"~~~~~"+newTop);
+
+	//par.getElementById('imgLoad').style.position="absolute";
+	//par.getElementById('imgLoad').style.display="block";
+/*	par.getElementById('origImage').style.display="none";
+	par.getElementById('sepiaImage').style.display="none";
+	par.getElementById('grayImage').style.display="none";*/
+
+	document.iform.submit();
+	
+}
+
+$(function(){
+	
+	$('.cabinet').click(function(){alert('asd');
+		
+		$('.file').click();
+		
+		});
+	
+	
+	});
+
+</script>
+
+
+<!--<link href="css/upload_file.css" rel="StyleSheet" type="text/css"/>-->
+</head>
+<body style="height:30px;">
+<form name="iform" id="uploadform" class="example" style="height:30px;" action="uploadimg.php" method="post" enctype="multipart/form-data"  >
+<label class="cabinet"> 
+		 <input type="file" name="image" size="1" onChange="return upload();" onKeyUp="return upload();" style="width: 100px;" class="file" />
+		
+	</label>
+						   <!-- <div class="md_rt2_txt-btn">Fetch</div>-->
+	<input type="hidden" name="cardwidth" id="cardwidth" value="">
+	<input type="hidden" name="cardheight" id="cardheight" value="">
+	<input type="hidden" name="uplod_post" value="">
+	<input type="hidden" name="imgnum" />
+	<input type="hidden" id="type" name="type" value="<?php echo $_REQUEST['type'];?>" />
+	<input type="hidden" id="showid" name="showid" value="<?php echo $_REQUEST['showid'];?>" />
+	<input type="hidden" id="textfield" name="textfield" value="<?php echo $_REQUEST['textfield'];?>" />
+	<input type="hidden" name="oldimage" value="" id="oldimage">
+                            
+<!--<a onClick="return upload();" style="cursor:pointer" id="orenge_bottonlink">upload</a>-->
+</form>
+<script type="text/javascript" language="javascript">
+
+SI.Files.stylizeAll();
+
+</script>
+</body>
