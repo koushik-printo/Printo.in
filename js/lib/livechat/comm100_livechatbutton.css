@@ -1,0 +1,188 @@
+﻿.comm100_dvbox_css
+{
+	 width:184px!important;  
+	 padding:0!important;   
+	 margin:0px!important;   
+	 float:none!important;  
+	 border:0px!important;  
+	 background-color:#e8e8e8!important;   
+	 padding:1px!important;   
+	 position:absolute!important;  
+     z-index:9999999!important;  
+     font-family: Arial, sans-serif!important;   
+     text-align:left!important;   
+     vertical-align:top!important;  
+}
+.comm100_dvbox_css .comm100_dvcontent_css
+{
+	width:180px!important;  
+	background-color:#fff!important;  
+	padding:2px!important;   
+	position:relative!important;  
+	border:0px!important;  
+	float:none!important;  
+}
+.comm100_dvbox_css .comm100_dvcontent_css .comm100_ptitle_css
+{
+	height:18px!important;   
+	line-height:18px!important;   
+	font-size:10px!important;   
+	width:175px!important;   
+	background-color:#e8e8e8!important;   
+	color:#555;  
+	padding:2px 0 2px 5px; 
+	margin:0px!important;   
+	text-indent:4px!important;    
+	border:0px!important;   
+	float:none!important;  
+	display:block!important;  
+}
+.comm100_dvbox_css .comm100_dvcontent_css .comm100_ptitle_css .comm100_atitle_css
+{
+    display:inline!important;  
+    color:#009999!important; 
+    font-size:10px!important; 
+    margin:0px!important; 
+    padding:0px!important; 
+    border:0px!important; 
+    float:none!important; 
+}
+.comm100_dvbox_css .comm100_dvcontent_css  .comm100_ulbox_css
+{
+    padding:0px!important; 
+    margin:0px!important; 
+    border:0px!important; 
+    float:none!important; 
+    padding-top:3px!important; 
+    padding-bottom:5px!important; 
+    line-height:14px!important; 
+    position:relative!important; 
+    padding-left:20px!important; 
+    list-style-type:disc!important; 
+    list-style-position:outside!important;
+    list-style-image:none!important; 
+    background:#fff!important; 
+    font-size:10px!important;  
+    display:block!important; 
+    overflow:visible!important; 
+    text-align:left!important; 
+}
+.comm100_dvbox_css .comm100_dvcontent_css  .comm100_ulbox_css li
+{
+    font-size:10px!important;
+    color:#009999!important;
+    border:0px!important; 
+    background:#fff!important; 
+    line-height:15px!important; 
+    margin:0px!important;  
+    padding:0px!important; 
+    width:98%!important; 
+    _width:155px; 
+    font-weight:300!important; 
+    float:none!important; 
+    position:relative!important; 
+    text-indent:8px!important;
+    display:list-item!important;
+    text-align:left!important;
+}
+
+
+.comm100_dvbox_css .comm100_dvcontent_css  .comm100_ulbox_css li a
+{
+     position:relative!important;  
+     color:#009999!important; 
+     font-size:10px!important;
+     font-weight:300!important;   
+     display:inline!important;
+     border:0px!important;   
+     background:#fff!important;  
+     height:14px!important;  
+     line-height:14px!important;   
+     margin:0px!important;
+     padding:0px!important;
+     text-align:left!important;
+     width:100%!important; 
+     text-indent:0px!important;
+     float:none!important;
+}
+.comm100_dvbox_css .comm100_dvcontent_css  .comm100_ulbox_css .comm100_onelinone
+{
+ border:0px!important;
+ width:0px!important;
+ float:none!important;
+ padding:0px!important;
+ margin:0px!important;
+ height:0px!important;
+ display:none!important;
+}
+
+
+#comm100_warp 
+{
+ border:0px!important;
+ width:190px!important;
+ float:none!important;
+ padding:0px!important;
+ margin:0px!important;
+}
+
+#comm100_warp  a
+{
+  background-image:none!important;
+}
+#comm100_warp #comm100_dvhelp
+{
+ border:0px!important;
+ width:165px!important;
+ float:none!important;
+ margin:0px!important;
+ padding:0px!important;
+}
+#comm100_warp #comm100_dvhelp .comm100_ahelp_css
+{
+ padding:0px!important; 
+ margin:0px!important;
+ display:inline-block!important; 
+ border:0px!important;
+ float:none!important;
+}
+ @media screen and (min-width:0px){
+	#comm100_warp #comm100_dvhelp .comm100_ahelp_css
+	{
+		 display:inline; 
+	}
+}
+#comm100_warp #comm100_dvhelp .comm100_ahelp_css #comm100_ButtonImage
+{
+ margin:0px!important;
+ padding:0px!important;
+ border:0px!important;
+ float:none!important;
+}
+#comm100_warp #comm100_dvhelp #comm100_track
+{
+ position:relative!important; 
+ z-index:9999999!important; 
+ margin:0px!important; 
+ padding:0px!important; 
+ border:0px!important;
+ line-height:15px!important;
+ float:none!important;
+ font-size:10px!important; 
+ vertical-align:top!important; 
+ font-family:Arial, Helvetica, sans-serif; 
+ color:#555; 
+ /*display:inline!important;*/
+}
+#comm100_warp #comm100_dvhelp #comm100_track a
+{
+ text-decoration:none!important; 
+ line-height:14px!important;  
+ color:#009999!important;  
+ display:inline!important; 
+ font-size:10px!important; 
+ margin:0px!important; 
+ padding:0px!important; 
+ border:0px!important; 
+ float:none!important;
+}

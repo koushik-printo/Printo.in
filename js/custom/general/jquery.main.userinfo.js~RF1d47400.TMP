@@ -1,0 +1,423 @@
+
+function getbillingarea(str)
+{
+myformchange();
+
+var xmlhttp;
+if (str=="")
+  {
+  document.getElementById("txtHint").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+
+//xmlhttp.open("GET","getupdateorder.php?q="+mystr+"&pid="+prod_id+"&itemid="+item_id,true);
+xmlhttp.open("GET","getarea.php?q="+str+"&mode=bill",true);
+xmlhttp.send();
+}
+
+function getshippingarea(str)
+{
+
+var xmlhttp;
+if (str=="")
+  {
+  document.getElementById("txtHintShip").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHintShip").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+
+//xmlhttp.open("GET","getupdateorder.php?q="+mystr+"&pid="+prod_id+"&itemid="+item_id,true);
+xmlhttp.open("GET","getarea.php?q="+str+"&mode=ship",true);
+xmlhttp.send();
+}
+
+
+function myformchange()
+{
+	if(document.form1.ship.checked)
+	{
+		document.form1.shipping_fname.value=document.form1.billing_fname.value;
+		document.form1.shipping_lname.value=document.form1.billing_lname.value;
+		document.form1.shipping_address1.value=document.form1.billing_address1.value;
+		document.form1.shipping_address2.value=document.form1.billing_address2.value;
+		
+		if(document.form1.billing_statetext.value==''){
+		document.getElementById('shipping_statetext').value=document.getElementById('billing_state').value;
+		document.getElementById('shipping_state_').value=document.getElementById('billing_state').value;
+		document.getElementById('shipping_state').value=document.getElementById('billing_state').value;}
+		else{
+		document.getElementById('shipping_statetext').value=document.getElementById('billing_state').value;
+		document.getElementById('shipping_state_').value=document.getElementById('billing_state').value;
+		document.getElementById('shipping_state').value=document.getElementById('billing_state').value;}
+		
+		
+		document.form1.shipping_pincode.value=document.form1.billing_pincode.value;
+		document.form1.shipping_area.value=document.form1.billing_area.value;
+		document.form1.shipping_phone.value=document.form1.billing_phone.value;
+		document.form1.countryVal1.value=document.form1.countryVal.value;
+		if(document.form1.countryVal.value!=''){
+		document.getElementById('shipping_country_2').checked=true;
+		document.getElementById('shipping_country_2').value=document.getElementById('billing_country_2').value;
+		$('.countryTr1').show();
+		$('#shipping_state_').attr('disabled','disabled').css('display','none');
+		$('#shipping_statetext').removeAttr('disabled').css('display','block');
+		document.getElementById('shipping_statetext').value=document.getElementById('billing_statetext').value;
+		}
+		
+		document.getElementById('req_servedAt').options[0].selected=true;
+		
+		$('#shipping_fname').removeAttr('readonly');
+		$('#shipping_lname').removeAttr('readonly');
+		$('#shipping_address1').removeAttr('readonly');
+		$('#shipping_address2').removeAttr('readonly');
+		$('#shipping_pincode').removeAttr('readonly');
+		$('#shipping_area').removeAttr('readonly');
+		$('#shipping_state_').removeAttr('disabled');
+		$('#shipping_phone').removeAttr('readonly');
+	}
+	else
+	{
+		document.form1.shipping_fname.value="";
+		document.form1.shipping_lname.value="";
+		document.form1.shipping_address1.value="";
+		document.form1.shipping_address2.value="";
+		document.form1.shipping_state_.value="";
+		document.form1.shipping_state.value="";
+		document.form1.shipping_pincode.value="";
+		document.form1.shipping_area.value="";
+		document.form1.shipping_phone.value="";
+		document.form1.shipping_country.value="";
+		
+		$('#shipping_fname').removeAttr('readonly');
+		$('#shipping_lname').removeAttr('readonly');
+		$('#shipping_address1').removeAttr('readonly');
+		$('#shipping_address2').removeAttr('readonly');
+		$('#shipping_pincode').removeAttr('readonly');
+		$('#shipping_area').removeAttr('readonly');
+		$('#shipping_state_').removeAttr('disabled');
+		$('#shipping_phone').removeAttr('readonly');
+	}
+}
+
+
+$(function(){ 
+
+$('#req_servedAt').change(function(){
+	var store_id=$('#req_servedAt').val();
+	if(store_id!="NO")
+			$.ajax({
+			type: 'GET',
+			url: 'storefetch.php',
+			data: 'action=post&store_id='+store_id ,
+			cache: false,
+			async: false,
+			success: function(result) {
+
+				
+				if(result)
+				{//alert(result)
+				
+					var newArr=result.split('::'),
+					shipping_fname=newArr[1],
+					shipping_lname=newArr[2],
+					shipping_address1=newArr[3],
+					shipping_address2=newArr[4],
+					shipping_pincode=newArr[5],
+					shipping_area=newArr[6],
+
+					//shipping_city=newArr[9],
+					shipping_state=newArr[10],
+					shipping_phone=newArr[11];
+				
+					
+					$('#shipping_fname').val(shipping_fname).attr('readonly','true');
+					//alert($('#shipping_fname').val());
+					$('#shipping_lname').val(shipping_lname).attr('readonly','true');
+					$('#shipping_address1').val(shipping_address1).attr('readonly','true');
+					$('#shipping_address2').val(shipping_address2).attr('readonly','true');
+					$('#shipping_pincode').val(shipping_pincode).attr('readonly','true');
+					$('#shipping_area').val(shipping_area).attr('readonly','true');
+					
+					
+					if(shipping_state=='Karnataka'){
+					$('#shipping_state_').val(17);
+					$('#shipping_statetext').val(shipping_state);}
+					var selState=document.getElementById('shipping_state_')
+					.options[document.getElementById('shipping_state_').selectedIndex].value;
+					$('#shipping_state').val(selState);
+					$('#shipping_phone').val(shipping_phone).attr('readonly','true');
+					$('#ship').attr('checked','');
+						//alert($('#shipping_fname').val());
+					
+
+				}
+				else
+				{
+
+
+
+				}
+			},
+			error: function() {
+			alert("Error");
+
+			}
+			
+			});
+	
+});
+
+$('.choise').click(function(){		//alert($(this).val());
+	
+	if($(this).val()=='1'){
+		
+		$('#delivDrop').css('display','block');
+		$('#delivCheck').css('display','none');
+		}
+else{
+
+		$('#delivDrop').css('display','none');
+		$('#delivCheck').css('display','block');
+		}
+	
+	
+	});
+	
+$('#shipping_state_').change(function(){
+	
+	$('#shipping_state').val($('#shipping_state_').val());
+	
+	});
+$('#shipping_statetext').change(function(){
+	
+	$('#shipping_state').val($('#shipping_statetext').val());
+	
+	});
+	
+$('#countryVal').keyup(function(){
+	
+	var elemVal=$(this).val();
+	$('#billing_country_2').val(elemVal);
+	
+	}).bind('change',function(){
+		
+	var elemVal=$(this).val();
+	$('#billing_country_2').val(elemVal);	
+		
+	});
+	
+	$('#countryVal1').keyup(function(){
+	
+	var elemVal=$(this).val();
+	$('#shipping_country_2').val(elemVal);
+	
+	}).bind('change',function(){
+		
+	var elemVal=$(this).val();
+	$('#shipping_country_2').val(elemVal);	
+		
+	});
+
+}); 
+function countryOther(Id,idVal){
+
+if(idVal!='India'){
+$('.countryTr').show();
+$('#billing_state').css('display','none').attr('disabled','disabled');
+$('#billing_statetext').removeAttr('disabled').css('display','block').css('position','absolute');
+}
+else if(idVal!='International') {
+$('.countryTr').hide();	
+$('#billing_statetext').attr('disabled','disabled').css('display','none');
+$('#billing_state').removeAttr('disabled').css('display','block').css('position','absolute');
+
+}
+}
+function countryOther1(Id,idVal){
+
+if(idVal!='India'){
+$('.countryTr1').show();
+$('#shipping_state_').attr('disabled','disabled').css('display','none');
+$('#shipping_statetext').removeAttr('disabled').css('display','block').css('position','absolute');
+}
+else if(idVal!='International') {
+$('.countryTr1').hide();
+$('#shipping_statetext').attr('disabled','disabled').css('display','none');	
+$('#shipping_state_').removeAttr('disabled').css('display','block').css('position','absolute');
+
+}
+}
+
+
+
+
+function IsNumeric(strString){
+	
+	
+var strValidChars = "0123456789.-";
+var strChar;
+var blnResult = true;
+if (strString.length == 0) return false;
+for (i = 0; i < strString.length && blnResult == true; i++) {
+    strChar = strString.charAt(i);
+    if (strValidChars.indexOf(strChar) == -1) {
+        blnResult = false
+    }
+}
+	
+return blnResult;
+
+}
+
+
+function validateEmail(str){
+	
+var x = str;
+var atpos = x.indexOf("@");
+var dotpos = x.lastIndexOf(".");
+	
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){return false;}
+
+}
+
+
+function checkData()
+{
+
+var shipping_fname=document.form1.shipping_fname.value,
+billing_fname=document.form1.billing_fname.value,
+shipping_lname=document.form1.shipping_lname.value,
+billing_lname=document.form1.billing_lname.value,
+shipping_address1=document.form1.shipping_address1.value,
+billing_address1=document.form1.billing_address1.value,
+shipping_address2=document.form1.shipping_address2.value,
+billing_address2=document.form1.billing_address2.value,
+/*shipping_city=document.form1.shipping_city.value,
+billing_city=document.form1.billing_city.value,*/
+shipping_state_=document.form1.shipping_state_.value,
+billing_state=document.form1.billing_state.value,
+shipping_state=document.form1.shipping_state.value,
+billing_state=document.form1.billing_state.value,
+shipping_pincode=document.form1.shipping_pincode.value,
+billing_pincode=document.form1.billing_pincode.value,
+shipping_area=document.form1.shipping_area.value,
+billing_area=document.form1.billing_area.value,
+shipping_phone=document.form1.shipping_phone.value,
+billing_phone=document.form1.billing_phone.value,
+shipping_country=document.form1.shipping_country.value,
+billing_country=document.form1.billing_country.value;
+
+var chk = true;
+
+
+if (shipping_fname == "" || !shipping_fname.match(/\w/)) {
+    $('#shipping_fname').next().next().html(' Enter Shipping First Name ');
+    chk = false
+}
+if (billing_fname == "" || !billing_fname.match(/\w/)) {
+    $('#billing_fname').next().next().html(' Enter First Name ');
+    chk = false
+}
+if (shipping_lname == "" || !shipping_lname.match(/\w/)) {
+    $('#shipping_lname').next().next().html(' Enter Shipping Last Name ');
+    chk = false
+}
+if (billing_lname == "" || !billing_lname.match(/\w/)) {
+    $('#billing_lname').next().next().html(' Enter Last Name ');
+    chk = false
+}
+if (shipping_address1 == "" || !shipping_address1.match(/\w/)) {
+    $('#shipping_address1').next().next().html(' Enter Shipping House No ');
+    chk = false
+}
+if (billing_address1 == "" || !billing_address1.match(/\w/)) {
+    $('#billing_address1').next().next().html(' Enter House No ');
+    chk = false
+}
+if (shipping_address2 == "" || !shipping_address2.match(/\w/)) {
+    $('#shipping_address2').next().next().html(' Enter Shipping Street ');
+    chk = false
+}
+if (billing_address2 == "" || !billing_address1.match(/\w/)) {
+    $('#billing_address2').next().next().html(' Enter Street ');
+    chk = false
+}
+if (shipping_city == "" || !shipping_city.match(/\w/)) {
+    $('#shipping_city').next().next().html(' Enter Shipping City ');
+    chk = false
+}
+if (billing_city == "" || !billing_city.match(/\w/)) {
+    $('#billing_city').next().next().html(' Enter City ');
+    chk = false
+}
+if (shipping_state_ == "" || !shipping_state_.match(/\w/)) {
+    $('#shipping_state_').next().next().html(' Enter Shipping State ');
+    chk = false
+}
+if (billing_state == "" || !billing_state.match(/\w/)) {
+    $('#billing_state').next().next().html(' Enter State ');
+    chk = false
+}
+if (shipping_pincode == "" || !shipping_pincode.match(/\w/) || IsNumeric(shipping_pincode) == false || shipping_pincode.length < 6) {
+    $('#shipping_pincode').next().next().html(' Check Shipping Pincode ');
+    chk = false
+}
+if (billing_pincode == "" || !billing_pincode.match(/\w/) || IsNumeric(billing_pincode) == false || billing_pincode.length < 6) {
+    $('#billing_pincode').next().next().html(' Check Pincode ');
+    chk = false
+}
+if (shipping_area == "" || !shipping_area.match(/\w/)) {
+    $('#shipping_area').next().next().html(' Enter Shipping Area ');
+    chk = false
+}
+if (billing_area == "" || !billing_area.match(/\w/)) {
+    $('#billing_area').next().next().html(' Enter Area ');
+    chk = false
+}
+if (shipping_phone == "" || !shipping_phone.match(/\w/) || IsNumeric(shipping_phone) == false || shipping_phone.length < 9) {
+    $('#shipping_phone').next().next().html(' Check Phone Number ');
+    chk = false
+}
+if (billing_phone == "" || !billing_phone.match(/\w/) || IsNumeric(billing_phone) == false || billing_phone.length < 9) {
+    $('#billing_phone').next().next().html(' Check Phone Number ');
+    chk = false
+}
+
+return chk;
+
+
+
+}
+
+
